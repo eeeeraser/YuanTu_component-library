@@ -2,6 +2,8 @@
   overflow-x: auto;
   border-radius: var(--border-radius-md);
   border: var(--border-width-sm) solid var(--docs-divider);
+  /* 整块实底，避免动态背景从表体/底部透出影响读数 */
+  background-color: var(--docs-table-header-bg);
 }
 
 .table {
@@ -37,9 +39,14 @@
   padding: var(--spacing-100) var(--spacing-150);
   vertical-align: top;
   color: #adadad;
+  background-color: var(--docs-table-header-bg);
   border-bottom: var(--border-width-sm) solid var(--docs-divider);
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+.table tbody tr:last-child .td {
+  border-bottom: none;
 }
 
 .name,
