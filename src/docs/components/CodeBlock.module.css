@@ -1,5 +1,5 @@
 .root {
-  margin: 0;
+  margin: 0 0 var(--spacing-250) 0;
   border-radius: var(--border-radius-sm);
   border: var(--border-width-sm) solid var(--docs-divider);
   background-color: #222222;
