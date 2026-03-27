@@ -89,6 +89,7 @@ export function DocsLayout({ activePath, onNavigate, children }: DocsLayoutProps
         hoverFillColor="#2e2e2e"
         shape="square"
         hoverTrailAmount={0}
+        strokeOpacity={0.35}
       />
       <aside
         className={styles.aside}

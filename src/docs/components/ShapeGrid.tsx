@@ -9,6 +9,8 @@ export type ShapeGridProps = {
   hoverFillColor?: string;
   shape?: 'square' | 'hexagon' | 'triangle' | 'circle';
   hoverTrailAmount?: number;
+  /** 网格线不透明度 0–1，越大越实（默认 1） */
+  strokeOpacity?: number;
   className?: string;
 };
 
@@ -20,6 +22,7 @@ export function ShapeGrid({
   hoverFillColor = '#222',
   shape = 'square',
   hoverTrailAmount = 0,
+  strokeOpacity = 1,
   className = '',
 }: ShapeGridProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -82,6 +85,8 @@ export function ShapeGrid({
 
     const drawGrid = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const strokeAlpha = Math.min(1, Math.max(0, strokeOpacity));
+      ctx.lineWidth = 1;
 
       if (isHex) {
         const colShift = Math.floor(gridOffset.current.x / hexHoriz);
@@ -108,8 +113,10 @@ export function ShapeGrid({
             }
 
             drawHex(cx, cy, squareSize);
+            ctx.globalAlpha = strokeAlpha;
             ctx.strokeStyle = borderColor;
             ctx.stroke();
+            ctx.globalAlpha = 1;
           }
         }
       } else if (isTri) {
@@ -139,8 +146,10 @@ export function ShapeGrid({
             }
 
             drawTriangle(cx, cy, squareSize, flip);
+            ctx.globalAlpha = strokeAlpha;
             ctx.strokeStyle = borderColor;
             ctx.stroke();
+            ctx.globalAlpha = 1;
           }
         }
       } else if (shape === 'circle') {
@@ -166,8 +175,10 @@ export function ShapeGrid({
             }
 
             drawCircle(cx, cy, squareSize);
+            ctx.globalAlpha = strokeAlpha;
             ctx.strokeStyle = borderColor;
             ctx.stroke();
+            ctx.globalAlpha = 1;
           }
         }
       } else {
@@ -191,8 +202,10 @@ export function ShapeGrid({
               ctx.globalAlpha = 1;
             }
 
+            ctx.globalAlpha = strokeAlpha;
             ctx.strokeStyle = borderColor;
             ctx.strokeRect(sx, sy, squareSize, squareSize);
+            ctx.globalAlpha = 1;
           }
         }
       }
@@ -376,7 +389,7 @@ export function ShapeGrid({
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [direction, speed, borderColor, hoverFillColor, squareSize, shape, hoverTrailAmount]);
+  }, [direction, speed, borderColor, hoverFillColor, squareSize, shape, hoverTrailAmount, strokeOpacity]);
 
   return (
     <canvas
