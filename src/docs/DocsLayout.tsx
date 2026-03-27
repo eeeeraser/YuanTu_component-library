@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import docsLogo from '../assets/docs-logo.png';
+import { ShapeGrid } from './components/ShapeGrid';
 import { DOC_PATHS, hrefForDocPath, type DocPath } from './route';
 import styles from './DocsLayout.module.css';
 
@@ -79,6 +80,16 @@ export function DocsLayout({ activePath, onNavigate, children }: DocsLayoutProps
 
   return (
     <div className={styles.layout}>
+      <ShapeGrid
+        className={styles.bgGrid}
+        direction="right"
+        speed={0.45}
+        borderColor="#2a2a2a"
+        squareSize={44}
+        hoverFillColor="#2e2e2e"
+        shape="square"
+        hoverTrailAmount={0}
+      />
       <aside
         className={styles.aside}
         style={{ width: sidebarWidth, flexShrink: 0 }}

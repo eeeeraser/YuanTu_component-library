@@ -1,18 +1,31 @@
 .layout {
+  position: relative;
   display: flex;
   min-height: 100vh;
-  background-color: var(--docs-canvas-bg);
+  /* 不铺实色，避免盖住底层 ShapeGrid canvas */
+  background-color: transparent;
   color: var(--color-text-primary);
   font-family: var(--font-family-body-en), var(--font-family-body-cn), system-ui, sans-serif;
 }
 
+.bgGrid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
 .aside {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   min-width: 0;
   padding: var(--spacing-200) var(--spacing-150);
   border-right: var(--border-width-sm) solid var(--docs-divider);
-  background-color: var(--docs-canvas-bg);
+  background-color: rgba(26, 26, 26, 0.4);
   overflow: auto;
 }
 
@@ -61,6 +74,8 @@
 }
 
 .resizeHandle {
+  position: relative;
+  z-index: 1;
   flex-shrink: 0;
   align-self: stretch;
   width: var(--spacing-100);
@@ -114,14 +129,16 @@
 }
 
 .mainWrap {
+  position: relative;
+  z-index: 1;
   flex: 1;
   min-width: 0;
-  background-color: var(--docs-canvas-bg);
+  background-color: rgba(26, 26, 26, 0.4);
 }
 
 .main {
   max-width: calc(var(--spacing-400) * 28);
   margin: 0 auto;
   padding: var(--spacing-300) var(--spacing-250);
-  background-color: var(--docs-canvas-bg);
+  background-color: transparent;
 }
