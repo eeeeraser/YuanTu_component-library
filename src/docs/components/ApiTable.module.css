@@ -1,0 +1,54 @@
+.wrap {
+  overflow-x: auto;
+  border-radius: var(--border-radius-md);
+  border: var(--border-width-sm) solid var(--docs-divider);
+}
+
+.table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: var(--spacing-150);
+}
+
+/* 多张 API 表共用同一列宽比例，纵向对齐 */
+.colParam {
+  width: 20%;
+}
+
+.colDesc {
+  width: 52%;
+}
+
+.colType {
+  width: 28%;
+}
+
+.th {
+  padding: var(--spacing-100) var(--spacing-150);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  background-color: var(--docs-table-header-bg);
+  border-bottom: var(--border-width-sm) solid var(--docs-divider);
+}
+
+.td {
+  padding: var(--spacing-100) var(--spacing-150);
+  vertical-align: top;
+  color: #adadad;
+  border-bottom: var(--border-width-sm) solid var(--docs-divider);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.name,
+.type {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: var(--spacing-125);
+  color: var(--color-text-brand);
+}
+
+.type {
+  color: var(--color-text-info);
+}

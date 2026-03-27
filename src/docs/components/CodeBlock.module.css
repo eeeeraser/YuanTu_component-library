@@ -1,0 +1,58 @@
+.root {
+  margin: 0;
+  border-radius: var(--border-radius-sm);
+  border: var(--border-width-sm) solid var(--docs-divider);
+  background-color: #222222;
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: var(--spacing-50) var(--spacing-100);
+  border-bottom: var(--border-width-sm) solid var(--docs-divider);
+  background-color: #222222;
+}
+
+.copyBtn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--spacing-200) + var(--spacing-100));
+  height: calc(var(--spacing-200) + var(--spacing-100));
+  padding: 0;
+  border: var(--border-width-sm) solid var(--docs-divider);
+  border-radius: 50%;
+  color: #adadad;
+  background-color: transparent;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease-in-out,
+    color 200ms ease-in-out,
+    border-color 200ms ease-in-out;
+}
+
+.copyBtn:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-border-brand);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.copyIcon {
+  width: var(--spacing-150);
+  height: var(--spacing-150);
+  flex-shrink: 0;
+}
+
+.codePane {
+  background-color: #222222;
+}
+
+/* SyntaxHighlighter 外层可能带 class，保证无多余边距 */
+.codePane :global(pre),
+.codePane :global(div[class*='language-']) {
+  margin: 0 !important;
+  background: transparent !important;
+}

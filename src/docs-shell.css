@@ -1,0 +1,16 @@
+/* 文档站画布背景（略浅于纯黑，需在 semantic.css 之后引入） */
+:root {
+  --docs-canvas-bg: #1a1a1a;
+  /** 表头等略抬升的区块，比画布稍亮 */
+  --docs-table-header-bg: #222222;
+  /** 文档站内分割线、表格线、卡片描边 */
+  --docs-divider: #333333;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--docs-canvas-bg);
+}

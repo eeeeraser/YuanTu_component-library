@@ -1,0 +1,83 @@
+@import "./primitives.css";
+
+/**
+ * Semantic — 语义 Token；颜色引用 primitives 变量
+ */
+
+:root {
+  --border-radius-circle: 999px;
+  --border-radius-lg: 12px;
+  --border-radius-md: 8px;
+  --border-radius-none: 0px;
+  --border-radius-round: 64px;
+  --border-radius-sm: 4px;
+  --border-radius-xs: 2px;
+  --border-width-lg: 4px;
+  --border-width-md: 2px;
+  --border-width-none: 0px;
+  --border-width-sm: 1px;
+  --color-border-brand: var(--color-brand-500);
+  --color-border-brand-hover: var(--color-brand-600);
+  --color-border-default: var(--color-violet-200);
+  --color-border-disabled: var(--color-brand-400);
+  --color-border-error: var(--color-rose-500);
+  --color-border-info: var(--color-blue-500);
+  --color-border-success: var(--color-green-500);
+  --color-border-warning: var(--color-orange-500);
+  --color-icon-brand: var(--color-brand-300);
+  --color-icon-brand-hover: var(--color-brand-500);
+  --color-icon-disabled: var(--color-gray-300);
+  --color-icon-error: var(--color-rose-500);
+  --color-icon-info: var(--color-blue-500);
+  --color-icon-on-action: var(--color-bw-white);
+  --color-icon-success: var(--color-green-500);
+  --color-icon-warning: var(--color-orange-500);
+  --color-surface-brand: var(--color-brand-500);
+  --color-surface-brand-hover: var(--color-brand-600);
+  --color-surface-default: var(--color-violet-500);
+  --color-surface-default-light: var(--color-violet-200);
+  --color-surface-disabled: var(--color-brand-400);
+  --color-surface-disabled-2: var(--color-violet-150);
+  --color-surface-error: var(--color-rose-100);
+  --color-surface-info: var(--color-blue-100);
+  --color-surface-success: var(--color-green-100);
+  --color-surface-warning: var(--color-orange-100);
+  --color-text-brand: var(--color-brand-300);
+  --color-text-brand-hover: var(--color-brand-500);
+  --color-text-disabled: var(--color-gray-300);
+  --color-text-error: var(--color-rose-500);
+  --color-text-info: var(--color-blue-500);
+  --color-text-on-action: var(--color-bw-white);
+  --color-text-primary: var(--color-brand-50);
+  --color-text-secondary: var(--color-brand-100);
+  --color-text-success: var(--color-green-500);
+  --color-text-warning: var(--color-orange-500);
+  --font-family-body-cn: "PingFang SC";
+  --font-family-body-en: "SF Pro";
+  --font-family-title-cn: "PingFang SC";
+  --font-family-title-en: "SF Pro Display";
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --spacing-100: 8px;
+  --spacing-1000: 80px;
+  --spacing-125: 10px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-250: 20px;
+  --spacing-300: 24px;
+  --spacing-350: 28px;
+  --spacing-400: 32px;
+  --spacing-450: 36px;
+  --spacing-50: 4px;
+  --spacing-500: 40px;
+  --spacing-550: 44px;
+  --spacing-600: 48px;
+  --spacing-650: 52px;
+  --spacing-700: 56px;
+  --spacing-75: 6px;
+  --spacing-750: 60px;
+  --spacing-800: 64px;
+  --spacing-850: 68px;
+  --spacing-900: 72px;
+  --spacing-950: 76px;
+}

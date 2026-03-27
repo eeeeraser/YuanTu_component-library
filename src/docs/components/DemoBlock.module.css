@@ -1,0 +1,32 @@
+.block {
+  margin-bottom: var(--spacing-400);
+}
+
+.title {
+  margin: 0 0 var(--spacing-100);
+  font-size: var(--spacing-200);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.desc {
+  margin: 0 0 var(--spacing-150);
+  font-size: var(--spacing-150);
+  line-height: 1.6;
+  color: #adadad;
+}
+
+.demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-150);
+  align-items: center;
+  padding: var(--spacing-200);
+  border-radius: var(--border-radius-md);
+  border: var(--border-width-sm) solid var(--docs-divider);
+  background-color: var(--docs-canvas-bg);
+}
+
+.codeWrap {
+  margin-top: var(--spacing-150);
+}

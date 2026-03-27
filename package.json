@@ -1,0 +1,57 @@
+{
+  "name": "yuantu-component-library",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./semantic.css": "./semantic.css",
+    "./primitives.css": "./primitives.css",
+    "./mdi": {
+      "types": "./src/components/Icon/mdi/index.ts",
+      "import": "./src/components/Icon/mdi/index.ts",
+      "default": "./src/components/Icon/mdi/index.ts"
+    },
+    "./action": {
+      "types": "./src/components/Icon/action/index.ts",
+      "import": "./src/components/Icon/action/index.ts",
+      "default": "./src/components/Icon/action/index.ts"
+    }
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "build:gh-pages": "npm run build && cp dist/index.html dist/404.html",
+    "preview": "vite preview",
+    "generate:icons": "node scripts/generate-mdi-chunks.mjs",
+    "generate:action-icons": "node scripts/generate-action-icons.mjs"
+  },
+  "dependencies": {
+    "@mdi/js": "^7.4.47",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "react-syntax-highlighter": "^16.1.1"
+  },
+  "devDependencies": {
+    "@material-design-icons/svg": "^0.14.15",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0"
+  }
+}

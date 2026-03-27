@@ -1,0 +1,67 @@
+.root {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.sizeSm {
+  width: var(--spacing-200);
+  height: var(--spacing-200);
+}
+
+.sizeMd {
+  width: var(--spacing-300);
+  height: var(--spacing-300);
+}
+
+.sizeLg {
+  width: var(--spacing-400);
+  height: var(--spacing-400);
+}
+
+.colorDefault {
+  color: var(--color-icon-brand);
+}
+
+.colorBrand {
+  color: var(--color-icon-brand);
+}
+
+.colorBrandHover {
+  color: var(--color-icon-brand-hover);
+}
+
+.colorSecondary {
+  color: var(--color-text-secondary);
+}
+
+.colorDisabled {
+  color: var(--color-icon-disabled);
+}
+
+.colorOnAction {
+  color: var(--color-icon-on-action);
+}
+
+.colorError {
+  color: var(--color-icon-error);
+}
+
+.colorInfo {
+  color: var(--color-icon-info);
+}
+
+.colorSuccess {
+  color: var(--color-icon-success);
+}
+
+.colorWarning {
+  color: var(--color-icon-warning);
+}
+
+.colorInherit {
+  color: inherit;
+}

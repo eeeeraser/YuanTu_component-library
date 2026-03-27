@@ -1,0 +1,128 @@
+.article {
+  max-width: 100%;
+}
+
+.header {
+  margin-bottom: var(--spacing-300);
+}
+
+.h1 {
+  margin: 0 0 var(--spacing-100);
+  font-size: var(--spacing-250);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.lead {
+  margin: 0;
+  font-size: var(--spacing-150);
+  line-height: 1.55;
+  color: #adadad;
+}
+
+.section {
+  margin-bottom: var(--spacing-300);
+}
+
+.h2 {
+  margin: 0 0 var(--spacing-150);
+  padding-bottom: var(--spacing-100);
+  border-bottom: var(--border-width-sm) solid var(--docs-divider);
+  font-size: var(--spacing-250);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.h3 {
+  margin: var(--spacing-200) 0 var(--spacing-100);
+  font-size: var(--spacing-200);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.ul {
+  margin: 0;
+  padding-left: var(--spacing-250);
+  font-size: var(--spacing-150);
+  line-height: 1.8;
+  color: #adadad;
+}
+
+.inlineCode {
+  padding: 0 var(--spacing-50);
+  border-radius: var(--border-radius-xs);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: var(--spacing-125);
+  color: var(--color-text-brand);
+  background-color: var(--color-surface-default);
+}
+
+/** 一组：小标题紧贴下方表格 */
+.apiBlock {
+  margin-bottom: var(--spacing-300);
+}
+
+.apiBlock:last-child {
+  margin-bottom: 0;
+}
+
+.apiNote {
+  margin: 0 0 var(--spacing-75);
+  font-size: var(--spacing-150);
+  line-height: 1.4;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/**
+ * DemoBlock 默认 .demo 为 flex，子项 flex-basis 为 auto 时栅格会被内容「勒窄」。
+ * 让演示区子节点占满一行宽度，蓝块才能铺满每列格子。
+ */
+.demoStretch {
+  align-items: stretch;
+}
+
+.demoStretch > * {
+  flex: 1 1 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* 文档内还原 Figma 栅格示意：深色底 + 蓝块 */
+.demoCanvas {
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--spacing-300);
+  border-radius: var(--border-radius-md);
+  border: var(--border-width-sm) solid var(--docs-divider);
+  background: var(--color-brand-950);
+}
+
+/* 栅格 Demo：标题/说明略小于默认 DemoBlock */
+.gridDemoTitle {
+  font-size: var(--spacing-150);
+  font-weight: var(--font-weight-regular);
+}
+
+.gridDemoDesc {
+  font-size: var(--spacing-125);
+  line-height: 1.5;
+}
+
+.demoCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--spacing-600);
+  padding: var(--spacing-100) var(--spacing-150);
+  font-family: var(--font-family-body-cn), var(--font-family-body-en), system-ui, sans-serif;
+  font-size: var(--spacing-125);
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--color-text-on-action);
+  background-color: var(--color-surface-brand);
+  border-radius: var(--border-radius-xs);
+}

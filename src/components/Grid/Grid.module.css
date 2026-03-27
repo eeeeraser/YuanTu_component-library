@@ -1,0 +1,51 @@
+/**
+ * 12 列栅格；列间距与行间距均为 spacing-300（24px）。
+ * 颜色仅用于列参考条，使用 primitives 混合透明度。
+ */
+
+.root {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.guides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--spacing-300);
+  pointer-events: none;
+}
+
+.guide {
+  min-height: 100%;
+  border-radius: var(--border-radius-xs);
+  /* 接近设计稿 rgba(23,34,153,0.24)，用 token 混合 */
+  background: color-mix(in srgb, var(--color-blue-800) 24%, transparent);
+}
+
+.rows {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--spacing-300);
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.col {
+  min-width: 0;
+}
