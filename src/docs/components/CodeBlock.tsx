@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useId, useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import styles from './CodeBlock.module.css';
@@ -42,6 +42,14 @@ function copyViaTextarea(text: string): boolean {
 export function CodeBlock({ code, language = 'tsx' }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
   const text = code.trim();
+  const hasCode = text.length > 0;
+  const [expanded, setExpanded] = useState(false);
+  const paneId = useId();
+  const toggleId = useId();
+
+  const paneClass = expanded
+    ? `${styles.codePane} ${styles.codePaneVisible}`
+    : `${styles.codePane} ${styles.codePaneHidden}`;
 
   const handleCopy = useCallback(async () => {
     let ok = false;
@@ -60,6 +68,33 @@ export function CodeBlock({ code, language = 'tsx' }: CodeBlockProps) {
   return (
     <div className={styles.root}>
       <div className={styles.toolbar}>
+        {hasCode ? (
+          <button
+            type="button"
+            className={styles.toggleBtn}
+            onClick={() => setExpanded((e) => !e)}
+            aria-expanded={expanded}
+            aria-controls={paneId}
+            id={toggleId}
+          >
+            <svg
+              className={expanded ? `${styles.chevron} ${styles.chevronOpen}` : styles.chevron}
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden
+            >
+              <path
+                d="M6 9l6 6 6-6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            {expanded ? '收起代码' : '展开代码'}
+          </button>
+        ) : null}
         <button
           type="button"
           className={styles.copyBtn}
@@ -111,26 +146,33 @@ export function CodeBlock({ code, language = 'tsx' }: CodeBlockProps) {
           )}
         </button>
       </div>
-      <div className={styles.codePane}>
-        <SyntaxHighlighter
-          language={language}
-          style={vscDarkPlus}
-          PreTag="div"
-          customStyle={{
-            margin: 0,
-            padding: 'var(--spacing-150) var(--spacing-200)',
-            background: CODE_BG,
-            fontSize: 'var(--spacing-125)',
-            lineHeight: 1.55,
-          }}
-          codeTagProps={{
-            style: {
-              fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
-            },
-          }}
-        >
-          {text}
-        </SyntaxHighlighter>
+      <div
+        id={paneId}
+        className={paneClass}
+        role={hasCode ? 'region' : undefined}
+        aria-labelledby={hasCode ? toggleId : undefined}
+      >
+        {expanded && hasCode ? (
+          <SyntaxHighlighter
+            language={language}
+            style={vscDarkPlus}
+            PreTag="div"
+            customStyle={{
+              margin: 0,
+              padding: 'var(--spacing-150) var(--spacing-200)',
+              background: CODE_BG,
+              fontSize: 'var(--spacing-125)',
+              lineHeight: 1.55,
+            }}
+            codeTagProps={{
+              style: {
+                fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+              },
+            }}
+          >
+            {text}
+          </SyntaxHighlighter>
+        ) : null}
       </div>
     </div>
   );

@@ -5,6 +5,11 @@ export const DOC_PATHS = {
   button: '/components/button',
   grid: '/components/grid',
   icon: '/components/icon',
+  typography: '/components/typography',
+  divider: '/components/divider',
+  layout: '/components/layout',
+  splitter: '/components/splitter',
+  breadcrumb: '/components/breadcrumb',
 } as const;
 
 export type DocPath = (typeof DOC_PATHS)[keyof typeof DOC_PATHS];
@@ -27,6 +32,11 @@ export function normalizePathname(): DocPath {
   if (raw === DOC_PATHS.button) return DOC_PATHS.button;
   if (raw === DOC_PATHS.grid) return DOC_PATHS.grid;
   if (raw === DOC_PATHS.icon) return DOC_PATHS.icon;
+  if (raw === DOC_PATHS.typography) return DOC_PATHS.typography;
+  if (raw === DOC_PATHS.divider) return DOC_PATHS.divider;
+  if (raw === DOC_PATHS.layout) return DOC_PATHS.layout;
+  if (raw === DOC_PATHS.splitter) return DOC_PATHS.splitter;
+  if (raw === DOC_PATHS.breadcrumb) return DOC_PATHS.breadcrumb;
   return DOC_PATHS.home;
 }
 

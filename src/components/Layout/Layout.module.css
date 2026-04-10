@@ -1,0 +1,116 @@
+.root {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  min-height: var(--layout-header-min-height);
+  padding-inline: var(--layout-header-padding-inline);
+  border-bottom: var(--border-width-sm) solid var(--layout-border-subtle);
+  background-color: var(--layout-header-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body-en), var(--font-family-body-cn), system-ui, sans-serif;
+  font-size: var(--spacing-150);
+}
+
+.content {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  padding: var(--layout-content-padding);
+  overflow: auto;
+  background-color: var(--layout-content-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body-en), var(--font-family-body-cn), system-ui, sans-serif;
+  font-size: var(--spacing-150);
+}
+
+.footer {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  padding-block: var(--layout-footer-padding-block);
+  padding-inline: var(--layout-footer-padding-inline);
+  border-top: var(--border-width-sm) solid var(--layout-border-subtle);
+  background-color: var(--layout-footer-bg);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-body-en), var(--font-family-body-cn), system-ui, sans-serif;
+  font-size: var(--spacing-125);
+}
+
+.sider {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-right: var(--border-width-sm) solid var(--layout-border-subtle);
+  transition:
+    width 0.2s ease-in-out,
+    min-width 0.2s ease-in-out;
+}
+
+.siderDark {
+  background-color: var(--layout-sider-bg);
+  color: var(--color-text-primary);
+}
+
+.siderLight {
+  background-color: var(--layout-sider-bg-light);
+  color: var(--color-text-primary);
+}
+
+.siderInner {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: var(--spacing-150);
+  font-size: var(--spacing-150);
+}
+
+.trigger {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--layout-sider-trigger-height);
+  border: none;
+  border-top: var(--border-width-sm) solid var(--layout-border-subtle);
+  padding: 0;
+  color: var(--color-text-secondary);
+  background-color: transparent;
+  cursor: pointer;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+  font: inherit;
+}
+
+.trigger:hover {
+  color: var(--color-teal-primary-500);
+  background-color: color-mix(in srgb, var(--color-brand-500) 12%, transparent);
+}
+
+.trigger:focus-visible {
+  outline: var(--border-width-md) solid var(--color-border-brand);
+  outline-offset: -2px;
+}
+
+.triggerIcon {
+  width: var(--spacing-200);
+  height: var(--spacing-200);
+}

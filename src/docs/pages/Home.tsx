@@ -153,6 +153,71 @@ export function Home({ onNavigate }: HomeProps) {
             </a>
             — 24×24 视口、语义色；Figma Action 453 个见 <code className={styles.code}>action</code> 子路径。
           </li>
+          <li>
+            <a
+              href={hrefForDocPath(DOC_PATHS.typography)}
+              className={styles.link}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate(DOC_PATHS.typography);
+              }}
+            >
+              Typography 字体排印
+            </a>
+            — 标题层级、正文、语义色与 Token。
+          </li>
+          <li>
+            <a
+              href={hrefForDocPath(DOC_PATHS.divider)}
+              className={styles.link}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate(DOC_PATHS.divider);
+              }}
+            >
+              Divider 分割线
+            </a>
+            — 水平/垂直、文案位置、线型与间距。
+          </li>
+          <li>
+            <a
+              href={hrefForDocPath(DOC_PATHS.layout)}
+              className={styles.link}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate(DOC_PATHS.layout);
+              }}
+            >
+              Layout 布局
+            </a>
+            — 顶栏、侧栏、主区、底栏与可收起侧栏；Token 见 semantic.css。
+          </li>
+          <li>
+            <a
+              href={hrefForDocPath(DOC_PATHS.splitter)}
+              className={styles.link}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate(DOC_PATHS.splitter);
+              }}
+            >
+              Splitter 分割面板
+            </a>
+            — 双栏拖拽、百分比/min/max、双击恢复比例。
+          </li>
+          <li>
+            <a
+              href={hrefForDocPath(DOC_PATHS.breadcrumb)}
+              className={styles.link}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate(DOC_PATHS.breadcrumb);
+              }}
+            >
+              Breadcrumb 面包屑
+            </a>
+            — items / 分隔符；navigable=false 时上级仅展示不跳转，末级为当前页。
+          </li>
         </ul>
       </section>
     </article>

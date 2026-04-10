@@ -20,6 +20,11 @@ const nav: { to: DocPath; label: string }[] = [
   { to: DOC_PATHS.button, label: 'Button 按钮' },
   { to: DOC_PATHS.grid, label: 'Grid 栅格' },
   { to: DOC_PATHS.icon, label: 'Icon 图标' },
+  { to: DOC_PATHS.typography, label: 'Typography 字体排印' },
+  { to: DOC_PATHS.divider, label: 'Divider 分割线' },
+  { to: DOC_PATHS.layout, label: 'Layout 布局' },
+  { to: DOC_PATHS.splitter, label: 'Splitter 分割面板' },
+  { to: DOC_PATHS.breadcrumb, label: 'Breadcrumb 面包屑' },
 ];
 
 type DocsLayoutProps = {

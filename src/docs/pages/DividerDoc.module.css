@@ -63,3 +63,41 @@
   line-height: 1.6;
   color: #adadad;
 }
+
+.prose {
+  margin: 0;
+  font-size: var(--spacing-150);
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+.prose + .prose {
+  margin-top: var(--spacing-100);
+}
+
+.inlineRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-100);
+  min-height: var(--spacing-400);
+  font-size: var(--spacing-150);
+  color: var(--color-text-primary);
+}
+
+.demoColumn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+}
+
+.demoStretch {
+  align-items: stretch;
+}
+
+.demoStretch > * {
+  flex: 1 1 100%;
+  max-width: 100%;
+  min-width: 0;
+}

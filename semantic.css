@@ -19,6 +19,8 @@
   --color-border-brand: var(--color-brand-500);
   --color-border-brand-hover: var(--color-brand-600);
   --color-border-default: var(--color-violet-200);
+  /** 分割线（Divider 等） */
+  --color-border-divider: #186b62;
   --color-border-disabled: var(--color-brand-400);
   --color-border-error: var(--color-rose-500);
   --color-border-info: var(--color-blue-500);
@@ -80,4 +82,41 @@
   --spacing-850: 68px;
   --spacing-900: 72px;
   --spacing-950: 76px;
+
+  /** 页面级 Layout（Header / Sider / Content / Footer） */
+  --layout-header-min-height: var(--spacing-800);
+  --layout-header-padding-inline: var(--spacing-300);
+  --layout-header-bg: var(--color-surface-default-light);
+  --layout-footer-bg: var(--color-surface-default-light);
+  --layout-footer-padding-block: var(--spacing-200);
+  --layout-footer-padding-inline: var(--spacing-300);
+  --layout-content-bg: var(--color-brand-950);
+  --layout-content-padding: var(--spacing-300);
+  --layout-sider-width: 200px;
+  --layout-sider-collapsed-width: var(--spacing-800);
+  --layout-sider-bg: var(--color-surface-default);
+  --layout-sider-bg-light: var(--color-surface-default-light);
+  --layout-sider-trigger-height: var(--spacing-600);
+  /** Layout 内分割线（较实色 --color-border-divider 更轻，可调混合比例） */
+  --layout-border-subtle: color-mix(in srgb, var(--color-border-divider) 42%, transparent);
+
+  /** Splitter 拖拽分割条 */
+  --splitter-gutter-hit: var(--spacing-100);
+  --splitter-bar-width: var(--border-width-md);
+  --splitter-bar-color: var(--layout-border-subtle);
+  --splitter-gutter-hover-bg: color-mix(in srgb, var(--color-brand-500) 16%, transparent);
+  --splitter-gutter-active-bg: color-mix(in srgb, var(--color-teal-primary-500) 12%, transparent);
+
+  /**
+   * Breadcrumb 面包屑
+   * 深底场景：未选（链接、中间纯文本、分隔符）浅灰；当前页为品牌青
+   */
+  --breadcrumb-font-size: var(--spacing-125);
+  --breadcrumb-link-color: #c4c4c4;
+  --breadcrumb-link-hover-color: var(--color-teal-primary-400);
+  --breadcrumb-current-color: var(--color-teal-primary-500);
+  --breadcrumb-current-font-weight: var(--font-weight-regular);
+  --breadcrumb-plain-color: var(--breadcrumb-link-color);
+  --breadcrumb-separator-color: var(--breadcrumb-link-color);
+  --breadcrumb-separator-margin-inline: var(--spacing-75);
 }

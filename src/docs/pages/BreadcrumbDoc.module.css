@@ -63,3 +63,23 @@
   line-height: 1.6;
   color: #adadad;
 }
+
+.inlineRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-100);
+  min-height: var(--spacing-400);
+  font-size: var(--spacing-150);
+  color: var(--color-text-primary);
+}
+
+.demoStretch {
+  align-items: stretch;
+}
+
+.demoStretch > * {
+  flex: 1 1 100%;
+  max-width: 100%;
+  min-width: 0;
+}

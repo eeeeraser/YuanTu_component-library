@@ -1,0 +1,106 @@
+.root {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  /* 父级有明确高度时铺满；flex 子项 + min-height:0 由文档壳层配合 */
+  height: 100%;
+  min-height: var(--spacing-250);
+  overflow: hidden;
+}
+
+.horizontal {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.panel {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  background-color: var(--color-surface-default);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body-en), var(--font-family-body-cn), system-ui, sans-serif;
+  font-size: var(--spacing-150);
+}
+
+.dragger {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: col-resize;
+  touch-action: none;
+  color: transparent;
+}
+
+.root.vertical .dragger {
+  cursor: row-resize;
+}
+
+.draggerInner {
+  border-radius: var(--border-radius-xs);
+  background-color: var(--splitter-bar-color);
+  transition: background-color 0.15s ease-out;
+}
+
+.horizontal .dragger {
+  width: var(--splitter-gutter-hit);
+  min-width: var(--splitter-gutter-hit);
+  align-self: stretch;
+}
+
+.horizontal .draggerInner {
+  width: var(--splitter-bar-width);
+  height: 40%;
+  min-height: var(--spacing-400);
+  max-height: 80%;
+}
+
+.vertical .dragger {
+  height: var(--splitter-gutter-hit);
+  min-height: var(--splitter-gutter-hit);
+  width: 100%;
+}
+
+.vertical .draggerInner {
+  height: var(--splitter-bar-width);
+  width: 40%;
+  min-width: var(--spacing-400);
+  max-width: 80%;
+}
+
+.dragger:hover .draggerInner,
+.dragger:focus-visible .draggerInner {
+  background-color: var(--splitter-gutter-hover-bg);
+}
+
+.dragger:active .draggerInner {
+  background-color: var(--splitter-gutter-active-bg);
+}
+
+.dragger:focus-visible {
+  outline: var(--border-width-md) solid var(--color-border-brand);
+  outline-offset: 2px;
+}
+
+.draggerDisabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+.draggerDisabled .draggerInner {
+  opacity: 0.45;
+}
